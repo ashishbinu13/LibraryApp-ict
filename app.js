@@ -8,22 +8,22 @@ const nav = [
 
 const app = express();
 
+const signupRouter = require("./src/routes/signupRoute");
 const homeRouter = require("./src/routes/homeRoute")(nav);
 const bookRouter = require("./src/routes/bookRoutes")(nav);
+const authRouter = require("./src/routes/authorRoute")(nav);
 
 app.use(express.static("./public"));
 app.set("view engine", "ejs");
 app.set("views", "./src/views");
 
+app.use("/signup", signupRouter);
 app.use("/home", homeRouter);
 app.use("/books", bookRouter);
+app.use("/authors", authRouter);
 
 app.get("/", (req, res) => {
   res.render("signin", { link: "/signup" });
-});
-
-app.get("/signup", (req, res) => {
-  res.render("signup");
 });
 
 app.listen(3000, () => {
