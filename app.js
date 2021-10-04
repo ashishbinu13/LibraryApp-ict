@@ -3,26 +3,27 @@ const express = require("express");
 const nav = [
   { link: "/books", name: "Books" },
   { link: "/authors", name: "Authors" },
+  { link: "/", name: "Logout" },
 ];
 
 const app = express();
 
+const homeRouter = require("./src/routes/homeRoute")(nav);
 const bookRouter = require("./src/routes/bookRoutes")(nav);
-
-// import { dirname } from "path";
-// import { fileURLToPath } from "url";
-// const __dirname = dirname(fileURLToPath(import.meta.url));
 
 app.use(express.static("./public"));
 app.set("view engine", "ejs");
 app.set("views", "./src/views");
+
+app.use("/home", homeRouter);
 app.use("/books", bookRouter);
 
 app.get("/", (req, res) => {
-  res.render("index", {
-    nav,
-    title: "Library",
-  });
+  res.render("signin", { link: "/signup" });
+});
+
+app.get("/signup", (req, res) => {
+  res.render("signup");
 });
 
 app.listen(3000, () => {
