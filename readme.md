@@ -5,4 +5,4 @@ Tech used:
 front-end: html, css, js.
 bootstrap
 
-back-end: node.js, express
+back-end: node.js, express, ejs
