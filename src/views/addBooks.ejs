@@ -84,33 +84,33 @@
       <div class="panel" >
         <div class="panel-body">
           
-            <form action="/books" id="bookForm">
+            <form method="POST" action="addBooks/add" id="bookForm" enctype="multipart/form-data">
 
                 <div class="form-group row" >
                     <label for="bookName" class="col-sm-2 col-form-label" >Book Title</label>
                     <div class="col-sm-8">
-                        <input id="bookName" type="text" class="form-control"  placeholder="Enter Book Name">
+                        <input name="title" id="bookName" type="text" class="form-control"  placeholder="Enter Book Name">
                     </div>
                 </div>
 
                 <div class="form-group row" >
-                    <label for="bookName" class="col-sm-2 col-form-label" >Author</label>
+                    <label for="authName" class="col-sm-2 col-form-label" >Author</label>
                     <div class="col-sm-8">
-                        <input id="bookAuthor" type="text" class="form-control"  placeholder="Enter Author Name">
+                        <input name="author" id="authName" type="text" class="form-control"  placeholder="Enter Author Name">
                     </div>
                 </div>
 
                 <div class="form-group row" >
-                    <label for="bookName" class="col-sm-2 col-form-label" >Genre</label>
+                    <label for="genre" class="col-sm-2 col-form-label" >Genre</label>
                     <div class="col-sm-8">
-                        <input id="bookGenre" type="text" class="form-control"  placeholder="Enter Book Genre">
+                        <input name="genre" id="bookGenre" type="text" class="form-control"  placeholder="Enter Book Genre">
                     </div>
                 </div>
 
                 <div class="form-group row" >
-                    <label for="bookName" class="col-sm-2 col-form-label" >Book Image</label>
+                    <label for="image" class="col-sm-2 col-form-label" >Book Image</label>
                     <div class="col-sm-8">
-                        <input type="file" class="form-control"  >
+                        <input name="image" type="file" class="form-control"  >
                     </div>
                 </div>
 

@@ -7,16 +7,16 @@ const form = document.getElementById("bookForm");
 const msg = document.getElementById("msg");
 const ok = document.getElementById("ok");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+// form.addEventListener("submit", (e) => {
+//   e.preventDefault();
 
-  msg.innerHTML = `<h3>Hurrayy!</h3>
-                                <p>${bookName.value} has been added to the Library</p>
-                                <small>Happy Reading!</small><br>`;
-  popup.style.visibility = "visible";
+//   msg.innerHTML = `<h3>Hurrayy!</h3>
+//                                 <p>${bookName.value} has been added to the Library</p>
+//                                 <small>Happy Reading!</small><br>`;
+//   popup.style.visibility = "visible";
 
-  ok.onclick = () => {
-    popup.style.visibility = "hidden";
-    form.submit();
-  };
-});
+//   ok.onclick = () => {
+//     popup.style.visibility = "hidden";
+//     form.submit();
+//   };
+// });

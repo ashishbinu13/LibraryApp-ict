@@ -1,5 +1,5 @@
 const express = require("express");
-
+const path = require("path");
 const nav = [
   { link: "/books", name: "Books" },
   { link: "/addBooks", name: "Add Books" },
@@ -17,7 +17,9 @@ const addBooksRouter = require("./src/routes/addBooks")(nav);
 const authRouter = require("./src/routes/authorRoute")(nav);
 const addAuthorRouter = require("./src/routes/addAuthors")(nav);
 
-app.use(express.static("./public"));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"));
+app.use("/images", express.static(__dirname + "public/images"));
 app.set("view engine", "ejs");
 app.set("views", "./src/views");
 
@@ -34,5 +36,4 @@ app.get("/", (req, res) => {
 
 app.listen(process.env.PORT || 3000, () => {
   console.log("Server started on PORT:3000");
-  console.log(process.env.PORT);
 });
