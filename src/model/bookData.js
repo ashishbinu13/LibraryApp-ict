@@ -7,7 +7,7 @@ mongoose.connect(
 const Schema = mongoose.Schema;
 
 const bookSchema = new Schema({
-  titile: String,
+  title: String,
   author: String,
   genre: String,
   image: String,
