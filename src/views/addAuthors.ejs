@@ -84,40 +84,40 @@
       <div class="panel" >
         <div class="panel-body">
           
-            <form action="/authors" id="authForm">
+            <form method="POST" action="addAuthors/add" id="authForm" enctype="multipart/form-data">
 
                 <div class="form-group row" >
                     <label for="authName" class="col-sm-2 col-form-label" >Author Name</label>
                     <div class="col-sm-8">
-                        <input id="authName" type="text" class="form-control"  placeholder="Enter Author's Name">
+                        <input required name="author" id="authName" type="text" class="form-control"  placeholder="Enter Author's Name">
                     </div>
                 </div>
 
                 <div class="form-group row" >
                     <label for="country" class="col-sm-2 col-form-label" >Country</label>
                     <div class="col-sm-8">
-                        <input id="country" type="text" class="form-control"  placeholder="Enter Author's Country">
+                        <input required name="country" id="country" type="text" class="form-control"  placeholder="Enter Author's Country">
                     </div>
                 </div>
 
                 <div class="form-group row" >
                     <label for="lang" class="col-sm-2 col-form-label" >Language</label>
                     <div class="col-sm-8">
-                        <input id="lang" type="text" class="form-control"  placeholder="Enter Language">
+                        <input required name="language" id="lang" type="text" class="form-control"  placeholder="Enter Language">
                     </div>
                 </div>
 
                 <div class="form-group row" >
                     <label for="period" class="col-sm-2 col-form-label" >Period</label>
                     <div class="col-sm-8">
-                        <input id="period" type="text" class="form-control"  placeholder="Enter Author's period timeline">
+                        <input required name="period" id="period" type="text" class="form-control"  placeholder="Enter Author's period timeline">
                     </div>
                 </div>
 
                 <div class="form-group row" >
                     <label class="col-sm-2 col-form-label" >Author Image</label>
                     <div class="col-sm-8">
-                        <input type="file" class="form-control"  >
+                        <input required name="image" type="file" class="form-control"  >
                     </div>
                 </div>
 

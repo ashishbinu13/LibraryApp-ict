@@ -7,13 +7,14 @@ mongoose.connect("mongodb://localhost:27017/library");
 
 const Schema = mongoose.Schema;
 
-const bookSchema = new Schema({
-  title: String,
+const authSchema = new Schema({
   author: String,
-  genre: String,
+  country: String,
+  language: String,
+  period: String,
   image: String,
 });
 
-var bookData = mongoose.model("bookdata", bookSchema);
+var authData = mongoose.model("authdata", authSchema);
 
-module.exports = bookData;
+module.exports = authData;

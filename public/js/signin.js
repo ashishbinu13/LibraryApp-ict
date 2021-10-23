@@ -19,16 +19,12 @@ function validate() {
   if (unameVal === "") {
     console.log(unameVal);
     displayError(uname, "User Name cannot be blank");
-  } else if (unameVal !== "admin") {
-    displayError(uname, "Invalid username");
   } else {
     displaySuccess(uname);
   }
 
   if (passwordVal === "") {
     displayError(password, "Password cannot be blank");
-  } else if (passwordVal !== "12345") {
-    displayError(password, "Wrong password");
   } else {
     displaySuccess(password);
   }
