@@ -165,7 +165,7 @@ function admin(nav) {
     }
   );
 
-  adminRouter.get("/:id/delete", (req, res) => {
+  adminRouter.get("/authors/:id/delete", (req, res) => {
     var id = req.params.id;
     authData.findByIdAndDelete({ _id: id }, (err, auth) => {
       if (err) {
