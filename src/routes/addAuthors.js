@@ -50,7 +50,7 @@ function addAuthor(nav) {
 
     var auth = authData(item);
     auth.save();
-    res.redirect("/authors");
+    res.redirect("/admin/authors");
   });
 
   return addAuthorRouter;

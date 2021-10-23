@@ -77,49 +77,6 @@ function auth(nav) {
     });
   });
 
-  authorRoute.get("/:id/update", (req, res) => {
-    var id = req.params.id;
-    authData.findOne({ _id: id }).then((auth) => {
-      res.render("authUpdate", {
-        nav,
-        title: "Library",
-        auth,
-      });
-    });
-  });
-
-  authorRoute.post("/:id/update/add", upload.single("image"), (req, res) => {
-    var id = req.params.id;
-    var item = {
-      author: req.body.author,
-      country: req.body.country,
-      language: req.body.language,
-      period: req.body.period,
-      image: req.file.filename,
-    };
-
-    authData.findOneAndUpdate({ _id: id }, item, null, (err, auth) => {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log("Original Auth : ", auth);
-      }
-    });
-    res.redirect("/authors");
-  });
-
-  authorRoute.get("/:id/delete", (req, res) => {
-    var id = req.params.id;
-    authData.findByIdAndDelete({ _id: id }, (err, auth) => {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log("Deleted Author : ", auth);
-      }
-    });
-    res.redirect("/authors");
-  });
-
   return authorRoute;
 }
 

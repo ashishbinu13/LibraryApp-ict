@@ -49,7 +49,7 @@ function addBooks(nav) {
 
     var book = bookData(item);
     book.save();
-    res.redirect("/books");
+    res.redirect("/admin/books");
   });
 
   return addBooksRouter;

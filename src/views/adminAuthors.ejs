@@ -12,7 +12,6 @@
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<link href="/css/styles.css" rel="stylesheet">
-    <script defer src="/js/addBooks.js"></script>
 	</head>
 	<body>
 <header class="navbar navbar-bright navbar-fixed-top" role="banner">
@@ -48,7 +47,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-7">
-        <h1>Update <%= book.title %> 
+        <h1>Authors
           <p class="lead"></p>
         </h1>
       </div>
@@ -76,54 +75,51 @@
 </div>
 
 
-<div class="container" >
-  <div class="row" >
+<div class="container">
+  <div class="row">
     
-    <div class="col-md-12" > 
+    <div class="col-md-12"> 
       
-      <div class="panel" >
+      <div class="panel">
         <div class="panel-body">
           
-            <form method="POST" action="/admin/books/<%= book._id %>/update/add " id="bookForm" enctype="multipart/form-data">
+          <% for (var i = 0; i < authors.length; i++) {%> 
 
-                <div class="form-group row" >
-                    <label for="bookName" class="col-sm-2 col-form-label" >Book Title</label>
-                    <div class="col-sm-8">
-                        <input required value="<%= book.title %> " name="title" id="bookName" type="text" class="form-control"  placeholder="Enter Book Name">
-                    </div>
-                </div>
-
-                <div class="form-group row" >
-                    <label for="authName" class="col-sm-2 col-form-label" >Author</label>
-                    <div class="col-sm-8">
-                        <input required value="<%= book.author %>" name="author" id="authName" type="text" class="form-control"  placeholder="Enter Author Name">
-                    </div>
-                </div>
-
-                <div class="form-group row" >
-                    <label for="genre" class="col-sm-2 col-form-label" >Genre</label>
-                    <div class="col-sm-8">
-                        <input required value="<%= book.genre %>" name="genre" id="bookGenre" type="text" class="form-control"  placeholder="Enter Book Genre">
-                    </div>
-                </div>
-
-                <div class="form-group row" >
-                    <label for="image" class="col-sm-2 col-form-label" >Book Image</label>
-                    <div class="col-sm-8">
-                        <input required value="<%= book.image %>" name="image" type="file" class="form-control"  >
-                    </div>
-                </div>
-
-                <div class="col-auto my-1">
-                    <button type="submit" class="btn btn-primary" id="formSubmit">Submit</button>
-                </div>
-
-            </form>
+          <!--/stories-->
+          <div class="row">    
+            <br>
+            <div class="col-md-2 col-sm-3 text-center">
+              <a class="story-title" href="#"><img alt="" src="/images/<%= authors[i].image %> " style="width:100px;height:100px" class="img-circle"></a>
+            </div>
+            <div class="col-md-10 col-sm-9">
+              <h3><%= authors[i].author %> </h3>
+              <div class="row">
+                <div class="col-xs-9">
+                  <h4><span class="label label-default"><%= authors[i].country %> </span></h4><h4>
+                  <small style="font-family:courier,'new courier';" class="text-muted"><%= authors[i].language %>   • 
+                    <a href="/admin/authors/<%= authors[i]._id %> " class="text-muted">Read More</a></small>
+                  </h4></div>
+                <div class="col-xs-3"></div>
+              </div>
+              <br><br>
+            </div>
+          </div>
+          <hr>
+          
+          
+          <!--/stories-->
+            <% } %> 
+          
+          
+          
+          
+          
+        
+          
         </div>
       </div>
                                                                                        
-	                        
-      
+	                                                
                                                       
    	</div><!--/col-12-->
   </div>
@@ -172,6 +168,5 @@
 	<!-- script references -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-
 	</body>
 </html>
