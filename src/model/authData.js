@@ -3,7 +3,12 @@ const mongoose = require("mongoose");
 // cloud
 // "mongodb+srv://userone:userone@myfiles.r6cjl.mongodb.net/libraryApp?retryWrites=true&w=majority
 
-mongoose.connect("mongodb://localhost:27017/library");
+//local
+//mongodb://localhost:27017/library
+
+mongodb: mongoose.connect(
+  "mongodb+srv://userone:userone@myfiles.r6cjl.mongodb.net/libraryApp?retryWrites=true&w=majority"
+);
 
 const Schema = mongoose.Schema;
 

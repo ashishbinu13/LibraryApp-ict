@@ -5,7 +5,9 @@ const signupData = require("../model/signupData");
 const signupRoute = express.Router();
 
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/library");
+mongoose.connect(
+  "mongodb+srv://userone:userone@myfiles.r6cjl.mongodb.net/libraryApp?retryWrites=true&w=majority"
+);
 
 function signup() {
   signupRoute.get("/", (req, res) => {

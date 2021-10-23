@@ -2,7 +2,9 @@ const express = require("express");
 const app = express();
 
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/library");
+mongoose.connect(
+  "mongodb+srv://userone:userone@myfiles.r6cjl.mongodb.net/libraryApp?retryWrites=true&w=majority"
+);
 const signupData = require("./src/model/signupData");
 
 function navbar(nav, user) {
